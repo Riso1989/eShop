@@ -1,0 +1,20 @@
+{
+  "name": "eshop",
+  "description": "Small description for eshop goes here",
+  "main": "",
+  "authors": [
+    "rsincak <richard.sincak@t-systems.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
+}

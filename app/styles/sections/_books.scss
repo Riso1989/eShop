@@ -1,0 +1,24 @@
+.bookImage {
+    padding: 10px;
+}
+
+.books {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.bookDescription {
+    padding: 10px;
+}
+
+.bookCard {
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
+    transition: 0.1s;
+    width: 30%;
+    margin: 5px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}

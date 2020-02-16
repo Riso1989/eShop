@@ -1,0 +1,48 @@
+.wrapper {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
+
+input[type=text], select, textarea {
+  width: 100%; 
+  padding: 5px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px;
+  margin-bottom: 6px; 
+  resize: vertical 
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.contact {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 10px;
+  width: 50%;
+}
+
+.map {
+  margin: 10px;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+
+

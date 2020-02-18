@@ -5,10 +5,10 @@
   <div class="books">
     {{#each @model as |book|}}
       <Book
-          @id = {{book.id}}
+        @id= {{book.id}}
           @title = {{book.volumeInfo.title}}
-          @desc = {{book.volumeInfo.description}}
-          @avatar = {{book.volumeInfo.imageLinks.thumbnail}}
+        @desc = {{book.volumeInfo.description}}
+        @avatar = {{book.volumeInfo.imageLinks.thumbnail}}
       />
     {{/each}}
   </div>

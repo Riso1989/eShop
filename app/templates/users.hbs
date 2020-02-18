@@ -1,16 +1,16 @@
 <div class="container">
   {{#each @model as |person|}}
     <div class="card">
-        <div class="image">
-            <img src="{{person.avatar_url}}" alt="Avatar">
-        </div>
-        <div class="details">
-            <h4><b>{{person.login}}</b></h4> <br/>
-            <p>{{person.type}}</p>
-            <form action={{person.html_url}}>
-                <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Profile</button>
-            </form>
-        </div>
+      <div class="image">
+        <img src="{{person.avatar_url}}" alt="Avatar">
+      </div>
+      <div class="details">
+        <h4><b>{{person.login}}</b></h4> <br/>
+        <p>{{person.type}}</p>
+        <form action={{person.html_url}}>
+          <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Profile</button>
+        </form>
+      </div>
     </div>
   {{/each}}
 </div>

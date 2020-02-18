@@ -11,4 +11,5 @@ Router.map(function() {
   this.route('contact');
   this.route('users');
   this.route('books');
+  this.route('bookName', { path: '/bookName/:book_name' });
 });

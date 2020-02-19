@@ -1,11 +1,12 @@
 import Route from '@ember/routing/route';
+import {inject as service} from '@ember/service';
+
 
 export default class ContactRoute extends Route {
 
-  async model() {
+  @service store;
 
-    let response = await fetch('http://localhost:8081/messages');
-    let json = await response.json();
-    return await json;
+  async model() {
+    return this.store.findAll('message');
   }
 }

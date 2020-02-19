@@ -1,28 +1,26 @@
-
-
-    <style>
-      #map {
-        height: {{@height}}; 
-        width: {{@width}}; 
-       }
-    </style>
-    <div id="map" data-lat={{@lat}} data-lng={{@lng}} data-zoom={{@zoom}} ></div>
-    <script>
-    function initMap() {
-            var location = {
-            lat: parseFloat(document.getElementById('map').getAttribute("data-lat")), 
-            lng: parseFloat(document.getElementById('map').getAttribute("data-lng"))
-            };
-            var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: parseInt(document.getElementById('map').getAttribute("data-zoom")),
-            center: location
-            });
-            var marker = new google.maps.Marker({
-            position: location,
-            map: map
-            });
-        }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDusRvGm9WhinwaOMCtlb1cW3wPxY4XsHQ&callback=initMap">
-    </script>
+<style>
+  #map {
+    height: {{@height}};
+    width: {{@width}};
+  }
+</style>
+<div id="map" data-lat={{@lat}} data-lng={{@lng}} data-zoom={{@zoom}} ></div>
+<script>
+  function initMap() {
+    var location = {
+      lat: parseFloat(document.getElementById('map').getAttribute("data-lat")),
+      lng: parseFloat(document.getElementById('map').getAttribute("data-lng"))
+    };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: parseInt(document.getElementById('map').getAttribute("data-zoom")),
+      center: location
+    });
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+  }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDusRvGm9WhinwaOMCtlb1cW3wPxY4XsHQ&callback=initMap">
+</script>

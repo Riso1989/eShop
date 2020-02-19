@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="books">
+    {{#if model.isPending}}
+        <h1>Loading...</h1> 
+    {{else}}
+      {{#each model as |book|}}
+        <Book
+              @id = {{book.id}}
+              @title = {{book.title}}
+              @desc = {{book.desc}}
+              @avatar = {{book.avatar}}
+          />
+      {{else}}
+        <h1>Your Cart is empty! :(</h1> 
+      {{/each}}
+    {{/if}}
+  </div>
+</div>

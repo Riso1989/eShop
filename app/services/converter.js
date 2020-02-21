@@ -15,7 +15,7 @@ export default class ConverterService extends Service {
 
     async getTotal(){
         let promise = this.store.findAll('cart').then(function(cart) {
-            return cart.toArray().mapBy('price').reduce((a, b) => a + b, 0);
+            return cart.toArray().mapBy('price').reduce((a, b) => a + b, 0).toFixed(2);
         });
     return await promise;
     }  

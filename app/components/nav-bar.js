@@ -10,5 +10,5 @@ export default class NavBarComponent extends Component {
     @computed('converter.serviceTotal')
     get serviceTotal(){
         return this.converter.getTotal();
-    }  
+    }
 }

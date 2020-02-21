@@ -23,14 +23,25 @@
           </div>
 
           <div class="modal-footer">
+            {{#if @price}}
+              <h3>{{@price}} {{@currency}}</h3>
+            {{else}}
+              <h3>Not for sale.</h3>
+            {{/if}}
+
             {{#if isCart}}
-              <button class="btn btn-secondary"   {{action 'removeFromCart' @id }} data-dismiss="modal">Remove from
+              {{yield}}
+              <button class="btn btn-secondary" {{action 'removeFromCart' @id @price}} data-dismiss="modal">Remove from
                 Cart
               </button>
             {{else}}
-              <button class="btn btn-secondary"   {{action 'addToCart' @id @title @avatar @desc}} data-dismiss="modal">
+              {{yield}}
+              <button class="btn btn-primary" {{action 'addToCart' @id @title @avatar @desc @price}}
+                      data-dismiss="modal"
+                      disabled= {{if @price false true}}>
                 Add to Cart
               </button>
+
             {{/if}}
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>

@@ -9,6 +9,8 @@
           @title = {{book.volumeInfo.title}}
         @desc = {{book.volumeInfo.description}}
         @avatar = {{book.volumeInfo.imageLinks.thumbnail}}
+        @price = {{book.saleInfo.listPrice.amount}}
+        @currency = {{book.saleInfo.listPrice.currencyCode}}
       />
     {{/each}}
   </div>

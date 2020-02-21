@@ -6,8 +6,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-
       <ul class="navbar-nav ml-auto">
+          {{#async-await this.serviceTotal as |ammount|}}
+               <h2 style="color: white; margin-right: 50px;"> {{ammount}} EUR</h2>
+          {{/async-await}}
         <li class="nav-item">
           <LinkTo class="nav-link" @route="books">Home</LinkTo>
         </li>

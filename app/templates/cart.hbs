@@ -1,42 +1,53 @@
 <div class="container">
-    <div class="cart">
-      <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Title</th>
-      <th scope="col">Price</th>
-    </tr>
-  </thead>
-  <tbody>
-      {{#each model as |book index|}}
-      <CheckOut 
-              @index = {{inc index}}
-              @title = {{book.title}}
+  <div class="cart">
+    <div class="order">
+      <div class="orderTable">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+          </tr>
+          </thead>
+          <tbody>
+          {{#if model.isPending}}
+            <h1>Loading...</h1>
+          {{else}}
+            {{#each model as |book index|}}
+              <CheckOut
+                @index= {{inc index}}
+                  @title = {{book.title}}
               @price = {{book.price}}
               @currency = {{book.currency}}
-      />     
-      {{/each}}
-  </tbody>
-</table>
-    
-  <div class="books">
-    {{#if model.isPending}}
-        <h1>Loading...</h1> 
-    {{else}}
-      {{#each model as |book|}}
-        <Book
-              @id = {{book.id}}
-              @title = {{book.title}}
-              @desc = {{book.desc}}
-              @avatar = {{book.avatar}}
-              @price = {{book.price}}
-              @currency = {{book.currency}}
-          />
+              />
+            {{else}}
+            {{/each}}
+          {{/if}}
+          </tbody>
+        </table>
+      </div>
+      <div class="summary">
+        <Summary/>
+      </div>
+    </div>
+    <div class="books">
+      {{#if model.isPending}}
+        <h1>Loading...</h1>
       {{else}}
-        <h1>Your Cart is empty! :(</h1> 
-      {{/each}}
-    {{/if}}
+        {{#each model as |book|}}
+          <Book
+            @id= {{book.id}}
+              @title = {{book.title}}
+          @desc = {{book.desc}}
+          @avatar = {{book.avatar}}
+          @price = {{book.price}}
+          @currency = {{book.currency}}
+          />
+        {{else}}
+          <h1>Your Cart is empty! :(</h1>
+        {{/each}}
+      {{/if}}
     </div>
   </div>
 </div>

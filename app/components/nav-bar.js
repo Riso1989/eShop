@@ -1,14 +1,13 @@
 import Component from "@glimmer/component";
 import {inject as service} from '@ember/service';
-import { computed } from '@ember/object';
+import {computed} from '@ember/object';
 
 export default class NavBarComponent extends Component {
 
-    @service converter;
-    @service store;
+  @service converter;
 
-    @computed('converter.serviceTotal')
-    get serviceTotal(){
-        return this.converter.getTotal();
-    }
+  @computed('converter.serviceTotal')
+  get serviceTotal() {
+    return this.converter.getTotal();
+  }
 }

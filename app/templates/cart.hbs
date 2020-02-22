@@ -1,4 +1,25 @@
 <div class="container">
+    <div class="cart">
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each model as |book index|}}
+      <CheckOut 
+              @index = {{inc index}}
+              @title = {{book.title}}
+              @price = {{book.price}}
+              @currency = {{book.currency}}
+      />     
+      {{/each}}
+  </tbody>
+</table>
+    
   <div class="books">
     {{#if model.isPending}}
         <h1>Loading...</h1> 
@@ -16,5 +37,6 @@
         <h1>Your Cart is empty! :(</h1> 
       {{/each}}
     {{/if}}
+    </div>
   </div>
 </div>

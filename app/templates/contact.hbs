@@ -11,7 +11,6 @@
   </tr>
   </thead>
   <tbody>
-
   {{#each @model as |message index|}}
     <TableRow
         @index = {{inc index}}
@@ -21,6 +20,5 @@
         @subject = {{message.subject}}
     />
   {{/each}}
-
   </tbody>
 </table>

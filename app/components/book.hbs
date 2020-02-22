@@ -36,7 +36,7 @@
               </button>
             {{else}}
               {{yield}}
-              <button class="btn btn-primary" {{action 'addToCart' @id @title @avatar @desc @price}}
+              <button class="btn btn-primary" {{action 'addToCart' @id @title @avatar @desc @price @currency}}
                       data-dismiss="modal"
                       disabled= {{if @price false true}}>
                 Add to Cart

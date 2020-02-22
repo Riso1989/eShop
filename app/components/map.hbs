@@ -7,15 +7,15 @@
 <div id="map" data-lat={{@lat}} data-lng={{@lng}} data-zoom={{@zoom}} ></div>
 <script>
   function initMap() {
-    var location = {
+    let location = {
       lat: parseFloat(document.getElementById('map').getAttribute("data-lat")),
       lng: parseFloat(document.getElementById('map').getAttribute("data-lng"))
     };
-    var map = new google.maps.Map(document.getElementById('map'), {
+    let map = new google.maps.Map(document.getElementById('map'), {
       zoom: parseInt(document.getElementById('map').getAttribute("data-zoom")),
       center: location
     });
-    var marker = new google.maps.Marker({
+    let marker = new google.maps.Marker({
       position: location,
       map: map
     });

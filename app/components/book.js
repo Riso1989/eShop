@@ -25,13 +25,14 @@ export default class BookComponent extends Component {
   }
 
   @action
-  addToCart(id, ti, av, de, pr) {
+  addToCart(id, ti, av, de, pr, cr) {
     let obj = {
       id: id,
       title: ti,
       avatar: av,
       desc: de,
-      price: pr
+      price: pr,
+      currency: cr
     }
     this.addAmount(pr);
     let record = this.store.createRecord('cart', obj);

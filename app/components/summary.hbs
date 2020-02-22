@@ -1,0 +1,19 @@
+<form action="sendMessage">
+  <label for="fname">First Name</label>
+  {{input type="text" value=firstName placeholder="First name.."}}
+  <label for="lname">Last Name</label>
+  {{input type="text" value=lastName placeholder="Last name.."}}
+  <label for="card">Card Number</label>
+  {{input type="text" value=cardNumber placeholder="Card number.."}}
+  <div style="display: flex; justify-content:space-around">
+    <label for="finalPrice"><h4>Final Price</h4></label>
+    <label>
+      {{#async-await this.serviceTotal as |ammount|}}
+        <h3> {{ammount}} EUR</h3>
+      {{/async-await}}
+    </label>
+  </div>
+  <br/>
+  <button type="button" class="btn btn-primary btn-lg btn-block active" {{on "click" this.sendOrder}}>Send order
+  </button>
+</form>

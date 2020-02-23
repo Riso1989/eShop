@@ -47,8 +47,8 @@ export default class SummaryComponent extends Component {
     });
 
     await this.deleteAllRecords();
+    this.router.transitionTo('/orderSent');
     this.converter.setTotal(0);
-    this.router.transitionTo('/books');
   }
 
   async deleteAllRecords() {

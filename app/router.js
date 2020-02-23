@@ -13,4 +13,6 @@ Router.map(function() {
   this.route('books');
   this.route('bookName', { path: '/bookName/:book_name' });
   this.route('cart');
+  this.route('emptyCart');
+  this.route('orderSent');
 });

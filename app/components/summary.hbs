@@ -1,10 +1,10 @@
-<form action="sendMessage">
+<form  {{action this.sendOrder on="submit"}}>
   <label for="fname">First Name</label>
-  {{input type="text" value=firstName placeholder="First name.."}}
+  {{input required=true type="text" value=firstName placeholder="First name.."}}
   <label for="lname">Last Name</label>
-  {{input type="text" value=lastName placeholder="Last name.."}}
+  {{input required=true type="text" value=lastName placeholder="Last name.."}}
   <label for="card">Card Number</label>
-  {{input type="text" value=cardNumber placeholder="Card number.."}}
+  {{input required=true type="text" value=cardNumber placeholder="Card number.."}}
   <div style="display: flex; justify-content:space-around">
     <label for="finalPrice"><h4>Final Price</h4></label>
     <label>
@@ -14,6 +14,7 @@
     </label>
   </div>
   <br/>
-  <button type="button" class="btn btn-primary btn-lg btn-block active" {{on "click" this.sendOrder}}>Send order
+  <input type="submit" value="submit" class="btn btn-primary btn-lg btn-block active" {{on "click" this.sendOrder}} />
+  <button type="submit" class="btn btn-primary btn-lg btn-block active">Send order
   </button>
 </form>
